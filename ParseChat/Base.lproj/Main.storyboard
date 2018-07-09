@@ -117,29 +117,39 @@
                                 <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="j57-pb-4r9" customClass="ChatCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="87" id="j57-pb-4r9" customClass="ChatCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j57-pb-4r9" id="6ui-9w-6eo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsJ-Nz-eEv">
-                                                    <rect key="frame" x="23" y="19" width="329" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsJ-Nz-eEv">
+                                                    <rect key="frame" x="8" y="37" width="359" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILW-Sb-Xcc">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="bottom" secondItem="6ui-9w-6eo" secondAttribute="bottomMargin" constant="8" id="Cs8-ef-ZBn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hsJ-Nz-eEv" secondAttribute="trailing" constant="8" id="Ve5-w7-CXd"/>
-                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="leading" secondItem="6ui-9w-6eo" secondAttribute="leadingMargin" constant="8" id="blp-ke-WKF"/>
-                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="top" secondItem="6ui-9w-6eo" secondAttribute="topMargin" constant="8" id="swe-yH-mLz"/>
+                                                <constraint firstAttribute="trailing" secondItem="ILW-Sb-Xcc" secondAttribute="trailing" constant="8" id="AHp-Fs-FZH"/>
+                                                <constraint firstItem="ILW-Sb-Xcc" firstAttribute="leading" secondItem="6ui-9w-6eo" secondAttribute="leading" constant="8" id="Bz4-FO-BeD"/>
+                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="leading" secondItem="6ui-9w-6eo" secondAttribute="leading" constant="8" id="Qu5-NZ-GY2"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hsJ-Nz-eEv" secondAttribute="bottom" constant="8" id="S4l-GC-cQJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="hsJ-Nz-eEv" secondAttribute="trailing" constant="8" id="hi6-5s-9Vc"/>
+                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="top" secondItem="ILW-Sb-Xcc" secondAttribute="bottom" constant="8" id="opx-og-NhP"/>
+                                                <constraint firstItem="ILW-Sb-Xcc" firstAttribute="top" secondItem="6ui-9w-6eo" secondAttribute="top" constant="8" id="wUA-M5-5Fh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="hsJ-Nz-eEv" id="RNf-cd-NN7"/>
+                                            <outlet property="usernameLabel" destination="ILW-Sb-Xcc" id="x3g-a5-55S"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

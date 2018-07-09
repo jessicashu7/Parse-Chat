@@ -37,6 +37,7 @@
     
     // Use the name of your outlet to get the text the user typed
     chatMessage[@"text"] = self.messageTextField.text;
+    chatMessage[@"username"] = PFUser.currentUser;
     [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
             NSLog(@"The message was saved!");
@@ -53,6 +54,7 @@
     //NSLog(@"timer");
     PFQuery *query = [PFQuery queryWithClassName:@"Message_fbu2018"];
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"user"];
     query.limit = 20;
     
     // fetch data asynchronously
@@ -78,6 +80,13 @@
     ChatCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatCell" forIndexPath:indexPath];
     cell.messageLabel.text = self.messagesArray[indexPath.row][@"text"];
     //NSLog(@"%@", self.messagesArray[indexPath.row][@"text"]);
+    
+    PFUser *user = self.messagesArray[indexPath.row][@"user"];
+    if (user != nil){
+        cell.usernameLabel.text = user.username;
+    } else {
+        cell.usernameLabel.text = @"default username";
+    }
     return cell;
 }
 
