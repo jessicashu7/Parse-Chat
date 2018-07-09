@@ -124,14 +124,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsJ-Nz-eEv">
-                                                    <rect key="frame" x="15" y="12" width="330" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsJ-Nz-eEv">
+                                                    <rect key="frame" x="23" y="19" width="329" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="bottom" secondItem="6ui-9w-6eo" secondAttribute="bottomMargin" constant="8" id="Cs8-ef-ZBn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hsJ-Nz-eEv" secondAttribute="trailing" constant="8" id="Ve5-w7-CXd"/>
+                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="leading" secondItem="6ui-9w-6eo" secondAttribute="leadingMargin" constant="8" id="blp-ke-WKF"/>
+                                                <constraint firstItem="hsJ-Nz-eEv" firstAttribute="top" secondItem="6ui-9w-6eo" secondAttribute="topMargin" constant="8" id="swe-yH-mLz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="hsJ-Nz-eEv" id="RNf-cd-NN7"/>
