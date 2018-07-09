@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,15 +85,77 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="NEC-KN-xpn" id="A8r-bK-3qh"/>
                         <outlet property="passwordTextField" destination="qhC-OT-45M" id="YMl-2q-OPd"/>
-                        <outlet property="signUpButton" destination="9Rv-RF-jaq" id="V2Z-Jh-YaB"/>
                         <outlet property="usernameTextField" destination="bJ5-Gd-DyM" id="6TT-8W-h2a"/>
+                        <segue destination="rNp-Qk-qS7" kind="show" identifier="loginSegue" id="tfv-Rw-zGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="109.59999999999999" y="31.934032983508249"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="YV0-hm-zpA">
+            <objects>
+                <viewController id="MiL-PX-U6N" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c2r-Tv-osr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-QQ-eRM">
+                                <rect key="frame" x="313" y="72" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cid-Kc-Yer"/>
+                                    <constraint firstAttribute="width" constant="46" id="xaq-Bl-Chl"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="MiL-PX-U6N" eventType="touchUpInside" id="8zT-jl-AVa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Osj-km-ekd">
+                                <rect key="frame" x="16" y="72" width="289" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2gb-QQ-eRM" firstAttribute="top" secondItem="bfy-v9-0Ih" secondAttribute="top" constant="8" id="1Cw-96-84O"/>
+                            <constraint firstItem="Osj-km-ekd" firstAttribute="leading" secondItem="c2r-Tv-osr" secondAttribute="leadingMargin" id="3dm-yh-5vU"/>
+                            <constraint firstItem="Osj-km-ekd" firstAttribute="top" secondItem="bfy-v9-0Ih" secondAttribute="top" constant="8" id="dfQ-b1-5zV"/>
+                            <constraint firstItem="2gb-QQ-eRM" firstAttribute="trailing" secondItem="c2r-Tv-osr" secondAttribute="trailingMargin" id="lcg-SO-MS2"/>
+                            <constraint firstItem="2gb-QQ-eRM" firstAttribute="leading" secondItem="Osj-km-ekd" secondAttribute="trailing" constant="8" id="nAK-H7-2e9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfy-v9-0Ih"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rTC-Ht-Ka6"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="Osj-km-ekd" id="sPy-15-cCb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiL-46-9HX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="31.934032983508249"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="8gr-Qe-LfF">
+            <objects>
+                <navigationController title="Chat" automaticallyAdjustsScrollViewInsets="NO" id="rNp-Qk-qS7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PBI-Io-X5s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MiL-PX-U6N" kind="relationship" relationship="rootViewController" id="gb0-nT-50H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ji-tF-f4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="32"/>
         </scene>
     </scenes>
 </document>
