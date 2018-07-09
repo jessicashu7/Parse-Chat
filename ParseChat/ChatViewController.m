@@ -37,7 +37,7 @@
     
     // Use the name of your outlet to get the text the user typed
     chatMessage[@"text"] = self.messageTextField.text;
-    chatMessage[@"username"] = PFUser.currentUser;
+    chatMessage[@"user"] = PFUser.currentUser;
     [chatMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
             NSLog(@"The message was saved!");

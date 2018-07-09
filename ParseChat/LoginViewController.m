@@ -35,7 +35,7 @@
     newUser.password = self.passwordTextField.text;
     
     // make sure password and username set
-    if ([self.usernameTextField.text isEqual:@""]){
+    if ([self.usernameTextField.text isEqual:@""] || [self.passwordTextField.text isEqual:@""] ){
         [self alertControlWithTitleAndMessage:@"Sign Up Error" message:@"Please make sure you entered a username and password"];
     }
     else {
